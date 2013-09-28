@@ -7,8 +7,5 @@ var config = require('./config.js'),
 module.exports = (function () {
     var images = mapImages();
     var refs = mapRefs();
-    //console.log(images);
-    console.log('*******************');
-    console.log(refs);
     return true;
 })();
