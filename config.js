@@ -1,11 +1,25 @@
 'use strict';
 
 module.exports = {
-    ignore: {
-        npm_modules: true,
-        hooks: true,
-        puppet: true,
-        test: true
+    refs: {
+        whitelist: false,
+        blacklist: {
+            'npm_modules': true,
+            'hooks': true,
+            'puppet': true,
+            //'test': true,
+            'public/img': true,
+            'LICENSE': true,
+            'README.md': true,
+            'lib': true,
+            'imgCheck.js': true,
+            'config.js': true
+        }
     },
-    imagePaths: ['./public']
+    images: {
+        roots: ['./public'],
+        folder: 'img',
+        types: ['gif', 'png', 'jpg', 'svg', 'ico']
+
+    }
 };

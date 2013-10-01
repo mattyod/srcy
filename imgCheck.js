@@ -2,10 +2,9 @@
 
 var config = require('./config.js'),
     mapImages = require('./lib/mapImages'),
-    mapRefs = require('./lib/mapRefs');
+    mapRefs = require('./lib/mapRefs'),
+    check = require('./lib/check');
 
 module.exports = (function () {
-    var images = mapImages();
-    var refs = mapRefs();
-    return true;
+    return check(mapImages(), mapRefs());
 })();
