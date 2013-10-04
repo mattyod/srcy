@@ -13,13 +13,15 @@ module.exports = {
             'README.md': true,
             'lib': true,
             'imgCheck.js': true,
-            'config.js': true
+            'config.js': true,
+            'public/js/lib': true
         }
     },
     images: {
         roots: ['./public'],
         folder: 'img',
-        types: ['gif', 'png', 'jpg', 'svg', 'ico']
-
+        types: ['gif', 'png', 'jpg', 'svg', 'ico'],
+        ignore: ['img/weather/#{temperature.outside.weather.now}_small.png'],
+        replace: []
     }
 };
