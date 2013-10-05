@@ -19,7 +19,9 @@ module.exports = {
     },
     images: {
         roots: ['./public'],
+        root: './public',
         folder: 'img',
+        folders: ['img'],
         types: ['gif', 'png', 'jpg', 'svg', 'ico'],
         ignore: ['img/weather/#{temperature.outside.weather.now}_small.png'],
         replace: []
