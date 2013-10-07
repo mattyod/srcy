@@ -23,6 +23,6 @@ module.exports = {
         folder: 'img',
         folders: ['img'],
         types: ['gif', 'png', 'jpg', 'svg', 'ico'],
-        ignore: ['']
+        ignore: ['img/notToBeReferenced.gif']
     }
 };
