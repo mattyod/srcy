@@ -15,6 +15,13 @@ module.exports = {
             'imgCheck.js': true,
             'config.js': true,
             'public/js/lib': true
+        },
+        replace: {
+            'img/weather/#{temperature.outside.weather.now}_small.png': [
+                'img/weather/nothing-here.png',
+                'img/weather/nothing-here2.png',
+                'img/weather/nothing-here3.png'
+            ]
         }
     },
     images: {
@@ -24,6 +31,6 @@ module.exports = {
         folders: ['img'],
         types: ['gif', 'png', 'jpg', 'svg', 'ico'],
         ignore: ['img/weather/#{temperature.outside.weather.now}_small.png'],
-        replace: []
+        widcards: ['']
     }
 };
