@@ -19,9 +19,7 @@ module.exports = {
         wildcards: ['#{.*?}']
     },
     images: {
-        roots: ['./public'],
         root: './public',
-        folder: 'img',
         folders: ['img'],
         types: ['gif', 'png', 'jpg', 'svg', 'ico'],
         ignore: ['img/notToBeReferenced.gif']
