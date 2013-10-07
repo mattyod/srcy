@@ -15,7 +15,8 @@ module.exports = {
             'config.js',
             'public/js/lib'],
         replace: {},
-        ignore: ['img/weather/#{temperature.outside.weather.now}_small.png'],
+        ignore: [],
+        wildcards: ['#{.*?}']
     },
     images: {
         roots: ['./public'],
