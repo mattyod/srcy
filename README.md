@@ -1,4 +1,4 @@
-imgCheck
+Srcy
 ========
 
 Check project image paths
