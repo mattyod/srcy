@@ -1,5 +1,5 @@
 {
-    "naem": "srcy",
+    "name": "srcy",
     "description": "Check project image paths for missing or redundant images",
     "version": "0.0.1",
     "keywords": ["images", "paths", "test", "build"],
