@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+// Handle any passed arguments
+require('./args');
+
+var srcy = require('../srcy')
