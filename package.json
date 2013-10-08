@@ -1,0 +1,20 @@
+{
+    "naem": "srcy",
+    "description": "Check project image paths for missing or redundant images",
+    "version": "0.0.1",
+    "keywords": ["images", "paths", "test", "build"],
+    "author": {
+        "name": "Matthew O'Donoghue"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mattyod/srcy"
+    },
+    "bugs": {
+        "url": "https://github.com/mattyod/srcy/issues"
+    },
+    "engines": {
+        "node": "0.10.x",
+        "npm": "1.2.x"
+    }
+}
