@@ -1,10 +1,10 @@
 'use strict';
 
-var config = require('./config.js'),
-    mapImages = require('./lib/mapImages'),
+var mapImages = require('./lib/mapImages'),
     mapRefs = require('./lib/mapRefs'),
-    check = require('./lib/check');
+    check = require('./lib/check'),
+    config = require('./lib/getConf').fetch();
 
 module.exports = (function () {
-    return check(mapImages(), mapRefs());
+    return check(mapImages(config), mapRefs(config));
 })();

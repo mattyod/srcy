@@ -5,7 +5,7 @@ module.exports = (function () {
 
     if (args.length) {
 
-        switch(args[0]) {
+        switch (args[0]) {
         case '--version':
         case '-version':
         case '--v':
