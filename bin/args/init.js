@@ -10,13 +10,7 @@ var getConf = function () {
 };
 
 var isForced = function () {
-    var force = false;
-
-    if (process.argv[3] && process.argv[3].match(/-f/)) {
-        force = true;
-    }
-
-    return force;
+    return process.argv[3] && process.argv[3].match(/-f/);
 };
 
 module.exports = (function () {
