@@ -40,11 +40,13 @@ describe('imgRegExp', function() {
     });
 
     it('does not match these things', function () {
-        console.log('-images/{variable}/thing.png'.match(reg));
-        (!'images/path/thing.pnga'.match(reg)).should.be.ok;
-        (!'rimages/path/thing.png'.match(reg)).should.be.ok;
-        (!'-images/{variable}/thing.png'.match(reg)).should.be.ok;
-        (!'images/path/thing.png-asd'.match(reg)).should.be.ok;
+        ('IMAGES/path/thing.png'.match(reg) === null).should.be.ok;
+        ('images/path/thing.pnga'.match(reg) === null).should.be.ok;
+        ('rimages/path/thing.png'.match(reg) === null).should.be.ok;
+        ('-images/{variable}/thing.png'.match(reg) === null).should.be.ok;
+        ('images/path/thing.png-asd'.match(reg) === null).should.be.ok;
+        ('images/path/thing.png-'.match(reg) === null).should.be.ok;
+        ('.images.path.thing.png'.match(reg) === null).should.be.ok;
     });
 
 });
