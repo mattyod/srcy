@@ -2,7 +2,7 @@
 
 var itterate = require('../../lib/itterate');
 
-describe('itterate', function () {
+describe('itterate', sandbox(function () {
     var callback,
         obj = {
             item1: 'foo',
@@ -22,4 +22,4 @@ describe('itterate', function () {
         callback.secondCall.args[1].should.equal('item2');
     });
 
-});
+}));

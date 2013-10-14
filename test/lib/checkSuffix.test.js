@@ -1,7 +1,7 @@
 'use strict';
 var checkSuffix = require('../../lib/checkSuffix');
 
-describe('checkSuffix', function () {
+describe('checkSuffix', sandbox(function () {
     var types = { 'gif': true, 'png': true };
 
     it('matches a gif file', function () {
@@ -16,4 +16,4 @@ describe('checkSuffix', function () {
         (typeof checkSuffix('foo.tiff', types)).should.equal('undefined');
     });
 
-});
+}));

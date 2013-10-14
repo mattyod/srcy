@@ -4,7 +4,7 @@ var getConf = require('../../lib/getConf'),
     log = require('../../lib/log'),
     fs = require('fs');
 
-describe('getConf', function () {
+describe('getConf', sandbox(function () {
 
     beforeEach(function () {
         this.stub(log);
@@ -42,4 +42,4 @@ describe('getConf', function () {
         });
     });
 
-});
+}));

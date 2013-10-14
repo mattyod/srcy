@@ -2,7 +2,7 @@
 var feedback = require('../../lib/feedback'),
     log = require('../../lib/log');
 
-describe('feedback', function () {
+describe('feedback', sandbox(function () {
     var imgs = {},
         refs = {};
 
@@ -58,4 +58,4 @@ describe('feedback', function () {
         });
 
     });
-});
+}));

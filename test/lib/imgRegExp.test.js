@@ -2,7 +2,7 @@
 
 var imgRegExp = require('../../lib/imgRegExp');
 
-describe('imgRegExp', function() {
+describe('imgRegExp', sandbox(function() {
     var reg,
         conf = {
             images: {
@@ -49,4 +49,4 @@ describe('imgRegExp', function() {
         ('.images.path.thing.png'.match(reg) === null).should.be.ok;
     });
 
-});
+}));
