@@ -1,5 +1,5 @@
 'use strict';
-/*global readdirSync */
+
 var mapImages = require('../../lib/mapImages'),
     log = require('../../lib/log'),
     fs = require('fs');
@@ -10,7 +10,7 @@ describe('mapImages', sandbox(function () {
             images: {
                 root: 'foo',
                 ignore: [],
-                types: ['gif'],
+                types: ['gif', 'png'],
                 folders: []
             }
         };
@@ -67,6 +67,7 @@ describe('mapImages', sandbox(function () {
     describe('when a folder contains files', function () {
 
         beforeEach(function () {
+            var firstCall = false;
 
             config.images.folders = ['img'];
 
@@ -76,14 +77,28 @@ describe('mapImages', sandbox(function () {
 
             this.stub(fs, 'statSync', function () {
                 return { isDirectory: function () {
-                    return true;
+                    if (!firstCall) {
+                        firstCall = true;
+                        return true;
+                    }
                 }};
             });
 
-            this.stub('fs', readdirSync, function () {
+            this.stub(fs, 'readdirSync', function () {
                 return ['.private', 'thing.gif', 'thing.png'];
             });
 
+            files = mapImages(config);
+
+        });
+
+        it('returns all non private files', function () {
+            var expected = {
+                'img/thing.gif': true,
+                'img/thing.png': true
+            };
+
+            files.should.deep.equal(expected);
         });
 
     });
