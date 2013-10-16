@@ -2,7 +2,7 @@
 
 var imgRegExp = require('../../lib/imgRegExp');
 
-describe('imgRegExp', sandbox(function() {
+describe('imgRegExp', sandbox(function () {
     var reg,
         conf = {
             images: {

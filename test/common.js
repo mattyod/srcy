@@ -1,9 +1,9 @@
 'use strict';
+/*global window */
 global.sinon = require('sinon');
 global.should = require('chai').use(require('sinon-chai')).should();
 
 (function (global) {
-    'use strict';
     global.sandbox = function (fn) {
 
         beforeEach(function () {
@@ -18,5 +18,5 @@ global.should = require('chai').use(require('sinon-chai')).should();
         });
 
         return fn;
-    }
-})(typeof global === 'undefined' ? window : global)
+    };
+})(typeof global === 'undefined' ? window : global);

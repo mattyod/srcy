@@ -1,5 +1,5 @@
 'use strict';
-
+/*global readdirSync */
 var mapImages = require('../../lib/mapImages'),
     log = require('../../lib/log'),
     fs = require('fs');
@@ -51,7 +51,7 @@ describe('mapImages', sandbox(function () {
             this.stub(fs, 'statSync', function () {
                 return { isDirectory: function () {
                     return false;
-                }}
+                }};
             });
 
             files = mapImages(config);
@@ -59,7 +59,7 @@ describe('mapImages', sandbox(function () {
         });
 
         it('maps it', function () {
-            files.should.deep.equal({ "file.gif": true });
+            files.should.deep.equal({ 'file.gif': true });
         });
 
     });
@@ -76,17 +76,15 @@ describe('mapImages', sandbox(function () {
 
             this.stub(fs, 'statSync', function () {
                 return { isDirectory: function () {
-                    return false;
-                }}
+                    return true;
+                }};
             });
 
             this.stub('fs', readdirSync, function () {
-                return
+                return ['.private', 'thing.gif', 'thing.png'];
             });
 
         });
-
-        this.
 
     });
 

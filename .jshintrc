@@ -1,5 +1,10 @@
 {
     "predef": [
+        "describe",
+        "sandbox",
+        "it",
+        "beforeEach",
+        "afterEach"
     ],
 
     "node"          : true,
