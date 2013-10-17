@@ -1,7 +1,7 @@
 {
     "name": "srcy",
     "description": "Check project image paths for missing or redundant images",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "keywords": ["images", "paths", "assets", "test", "build"],
     "author": {
         "name": "Matthew O'Donoghue"
