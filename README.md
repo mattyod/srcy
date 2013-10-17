@@ -37,7 +37,7 @@ reference to your package.json scripts object.
 }
 ```
 
-Or if you have Srcy installed globally you can use:
+Or if you have Srcy installed globally on your test environment you can use:
 
 ```
 "scripts": {
