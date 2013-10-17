@@ -100,7 +100,7 @@ check then add the them to an array such as:
 ```
 
 If no whitelist is specified Srcy will just start at the project root and check
-all files and folders that aren't [blacklisted](#configRefsBlacklist).
+all files and folders that aren't [blacklisted](#refsblacklist).
 
 ##### refs.blacklist
 
@@ -119,7 +119,7 @@ wish checked to this array, such as:
 default value: {}
 
 In some cases you may wish to replace an image reference with one or many
-others. **N.B** replace takes presedence over [wildcards](#configRefsWildcards).
+others. **N.B** replace takes presedence over [wildcards](#refswildcards).
 
 Say you have a reference such as:
 
