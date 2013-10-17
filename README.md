@@ -3,7 +3,7 @@
 Check project image paths for files that are referenced but do not exist and
 files that exist but are not referenced.
 
-## Installation {#installation}
+## Installation
 
 ### At project level
 
@@ -17,7 +17,7 @@ npm install srcy
 npm install -g srcy
 ```
 
-## Usage {#usage}
+## Usage
 
 Create a srcy.conf.json file at the root level of any project that you wish to
 check. See [Configuration](#configuration).
@@ -37,9 +37,9 @@ reference to your package.json scripts object.
 }
 ```
 
-## Configuration {#configuration}
+## Configuration
 
-### Create a config file {#createConfig}
+### Create a config file
 
 In order to run Srcy your project will need a **srcy.conf.json** file at the
 project root. You can generate an (almost) empty config file if you have
@@ -75,19 +75,19 @@ The generated file should look like this:
 }
 ```
 
-### Editing the config file {#editConfig}
+### Editing the config file
 
 Srcy will catch many issues for you out of the box like this but it's highly
 unlikely that some exceptions unusual syntax examples won't cause unexpected
 results so Srcy is designed to be highly configurable to allow you to tune it to
 the specifics of your project.
 
-#### refs {#configRefs}
+#### refs
 
 This section is for configuring how Srcy searches your project code base for
 references to images.
 
-##### refs.whitelist {#configRefsWhitelist}
+##### refs.whitelist
 
 default value: false
 type when populated: array
@@ -102,7 +102,7 @@ check then add the them to an array such as:
 If no whitelist is specified Srcy will just start at the project root and check
 all files and folders that aren't [blacklisted](#configRefsBlacklist).
 
-##### refs.blacklist {#configRefsBlacklist}
+##### refs.blacklist
 
 default value: []
 
@@ -114,7 +114,7 @@ wish checked to this array, such as:
 "blacklist": ["node_modules", "test", "README.md", "package.json", "web/images"]
 ```
 
-##### refs.replace {#configRefsReplace}
+##### refs.replace
 
 default value: {}
 
@@ -144,7 +144,7 @@ In order to acheive this you would set the replace attribute to be:
 
 Both files will now be matched against your project set up.
 
-##### refs.ignore {#configRefsIgnore}
+##### refs.ignore
 
 default value: []
 
@@ -157,7 +157,7 @@ you wish to exclude from Srcy's checks should be listed as such:
 "ignore": ["img/example.gif", "img/someOtherSitesLogo.gif"]
 ```
 
-##### refs.wildcards {#configRefsWildcards}
+##### refs.wildcards
 
 More powerful than replace, wildcards allows you to match and replace file
 references based on a regular expression. You can create your own matchers but
@@ -192,12 +192,12 @@ img -
 the files "img/weather/sunny.png" & "img/weather/cloudy.png" would be added as
 references.
 
-#### images {#configImages}
+#### images
 
 This section is for configuring the way in which Srcy matches images in your
 project.
 
-##### images.root {#configImagesRoot}
+##### images.root
 
 default.value: ""
 
@@ -208,7 +208,7 @@ Something such as:
 "./public"
 ```
 
-##### images.folders {#configImagesFolders}
+##### images.folders
 
 default.value: []
 
@@ -221,7 +221,7 @@ look for images or other assets that you wish to be checked. Such as:
 
 Srcy will scan through each of these folders looking for assets.
 
-##### images.types {#configImagesTypes}
+##### images.types
 
 default value: ["gif", "png", "jpg", "svg"]
 
@@ -229,7 +229,7 @@ This means that Srcy will only check for files with the suffixes .gif, .png,
 .jpg and .svg, if you wish to check for other file types simply add them to the
 array.
 
-##### images.ignore {#configImagesIgnore}
+##### images.ignore
 
 default.value: []
 
@@ -240,13 +240,13 @@ specify them here and they will simply be ignored by Srcy.
 "ignore": ["img/archive/old-logo.gif", "img/archive/christmas-logo.gif"]
 ```
 
-## Wildcards {#wildcards}
+## Wildcards
 
 As common or popular wildcards come to light they will be added here. Please
 feel free to submit ones that you have used and ideally tested in production
 here to build up a useful reference for othere.
 
-### Jade wildcards {#wildcardsJade}
+### Jade wildcards
 
 To replace Jade variable references such as:
 
