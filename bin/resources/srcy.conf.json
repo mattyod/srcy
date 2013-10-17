@@ -9,7 +9,7 @@
     "images": {
         "root": "",
         "folders": [],
-        "types": ["gif", "png", "jpg", "svg", "ico"],
+        "types": ["gif", "png", "jpg", "svg"],
         "ignore": []
     }
 }

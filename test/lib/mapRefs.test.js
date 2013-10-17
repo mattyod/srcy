@@ -230,7 +230,6 @@ describe('mapRefs', function () {
             mapRefs.addMatches.args[0][1].should.deep.equal({ 'foo': 'bar' });
         });
 
-        // Should it?
         it('deletes the config reference', function () {
             (mapRefs.config.refs.replace['foo.gif'] === undefined).should.be.ok;
         });
