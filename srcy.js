@@ -6,5 +6,5 @@ var mapImages = require('./lib/mapImages'),
     config = require('./lib/getConf').fetch();
 
 module.exports = (function () {
-    return check(mapImages(config), mapRefs.init(config));
+    process.exit(check(mapImages(config), mapRefs.init(config)));
 })();
