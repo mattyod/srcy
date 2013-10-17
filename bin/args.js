@@ -15,6 +15,8 @@ module.exports = (function () {
         case 'init':
             require('./args/init');
         }
+    } else {
+        return false;
     }
 
 })();

@@ -1,4 +1,19 @@
 #!/usr/bin/env node
 
+var path = require('path'),
+    fs = require('fs'),
+    log = require('../lib/log');
+
 // Handle any passed arguments
-require('./args');
+var args = require('./args');
+
+if (!args) {
+    var file = path.resolve(process.cwd(), 'node_modules', 'srcy');
+
+    if (fs.existsSync(file)) {
+        require(file);
+    } else {
+        log.error('Srcy not installed for this project.');
+        log.info('Please add srcy to your package.json and run "npm install"');
+    }
+}

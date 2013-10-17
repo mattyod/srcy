@@ -33,7 +33,15 @@ reference to your package.json scripts object.
 
 ```
 "scripts": {
-    srcy": "node node_modules/srcy/srcy.js"
+    "srcy": "node node_modules/srcy/srcy.js"
+}
+```
+
+Or if you have Srcy installed globally you can use:
+
+```
+"scripts": {
+    "srcy": "srcy"
 }
 ```
 

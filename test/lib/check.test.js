@@ -1,7 +1,8 @@
 'use strict';
 
 var check = require('../../lib/check.js'),
-    feedback = require('../../lib/feedback');
+    feedback = require('../../lib/feedback'),
+    log = require('../../lib/log');
 
 describe('check', sandbox(function () {
     var imgs,
@@ -26,6 +27,8 @@ describe('check', sandbox(function () {
             ]
         };
 
+        this.stub(log, 'success');
+
         this.stub(feedback, 'show');
     });
 
@@ -33,6 +36,10 @@ describe('check', sandbox(function () {
 
         beforeEach(function () {
             check(imgs, refs);
+        });
+
+        it('logs a success message', function () {
+            log.success.should.have.been.calledOnce;
         });
 
         it('passes two empty objects to feedback', function () {
