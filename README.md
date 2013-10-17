@@ -1,5 +1,4 @@
-Srcy
-========
+# Srcy [![Build Status](https://secure.travis-ci.org/mattyod/srcy.png?branch=master)](http://travis-ci.org/mattyod/srcy)
 
 Check project image paths for files that are referenced but do not exist and
 files that exist but are not referenced.
