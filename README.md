@@ -222,7 +222,7 @@ your project.
 
 ##### images.root
 
-default.value: ""
+*default value*: ""
 
 To assist Srcy in finding all your static files a root folder needs to be
 specified. Something such as:
@@ -233,7 +233,7 @@ specified. Something such as:
 
 ##### images.folders
 
-default.value: []
+*default value*: []
 
 Here you list all the folders within your root folder that you expect Srcy to
 look for files that you wish to be checked. Such as:
@@ -251,7 +251,7 @@ additional file types that you want to check.
 
 ##### images.ignore
 
-default.value: []
+*default value*: []
 
 If you wish to exclude any files from the 'image' search you can specify them
 here.

@@ -1,5 +1,9 @@
 # Srcy Change log
 
+## 18 October 2013, 0.0.5
+
+* typos in readme.
+
 ## 18 October 2013, 0.0.4
 
 * Readme improvements.
