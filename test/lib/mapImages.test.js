@@ -88,8 +88,6 @@ describe('mapImages', sandbox(function () {
                 return ['.private', 'thing.gif', 'thing.png'];
             });
 
-            files = mapImages(config);
-
         });
 
         it('returns all non private files', function () {
@@ -98,7 +96,27 @@ describe('mapImages', sandbox(function () {
                 'img/thing.png': true
             };
 
+            files = mapImages(config);
+
             files.should.deep.equal(expected);
+        });
+
+        describe('when a file is specified to be ignored', function () {
+
+            beforeEach(function () {
+                config.images.ignore = ['img/thing.png'];
+
+                files = mapImages(config);
+            });
+
+            it('does not return the ignored file', function () {
+                var expected = {
+                    'img/thing.gif': true
+                };
+
+                files.should.deep.equal(expected);
+            });
+
         });
 
     });
