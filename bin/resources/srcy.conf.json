@@ -2,6 +2,7 @@
     "refs": {
         "whitelist": false,
         "blacklist": [],
+        "notTypes": [],
         "replace": {},
         "ignore": [],
         "wildcards": []

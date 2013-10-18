@@ -1,5 +1,9 @@
 # Srcy Change log
 
+## 19 October 2013, 0.0.6
+
+* notTypes attribute added to refs so that you can ignore a type of file.
+
 ## 18 October 2013, 0.0.5
 
 * typos in readme.

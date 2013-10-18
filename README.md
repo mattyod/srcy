@@ -91,7 +91,7 @@ The generated file should look like this:
 
 ### Editing the config file
 
-Srcy will catch many issues for you like this but it's highly unlikely that 
+Srcy will catch many issues for you like this but it's highly unlikely that
 you will have a robust check in place without further configuration.
 
 Rather than aiming to code a solution to every possible variation within a
@@ -131,6 +131,19 @@ wish checked to this array, such as:
 "blacklist": ["node_modules", "test", "README.md", "package.json", "web/images"]
 ```
 
+##### refs.notTypes
+
+*default value*: []
+
+In addition to blacklisting specific files or folders you can use the notTypes
+attribute to ensure Srcy does not check files of a certain type. You may
+generate .css files from some other type of file and thus wish to ignore all css
+files:
+
+```
+notTypes: ["css"]
+```
+
 ##### refs.replace
 
 *default value*: {}
@@ -144,7 +157,7 @@ You may have Javascript files that reference images dynamically such as this:
 "img/buttons/" + onOffState + ".gif"
 ```
 
-You may wish to specify that this reference should refer to two seperate image 
+You may wish to specify that this reference should refer to two seperate image
 files:
 
 * "img/buttons/on.gif"
