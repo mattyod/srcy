@@ -5,43 +5,6 @@ var mapRefs = require('../../lib/mapRefs'),
 
 describe('mapRefs', function () {
 
-    describe('checkConf', function () {
-
-        beforeEach(function () {
-            mapRefs.config = {
-                refs: {
-                    ignore: ['foo', 'bar'],
-                    blacklist: ['one', 'two'],
-                    whitelist: ['bim', 'bom']
-                }
-            };
-
-            mapRefs.checkConf();
-        });
-
-        it('creates ignore object', function () {
-            mapRefs.ignore.should.deep.equal({
-                'foo': true,
-                'bar': true
-            });
-        });
-
-        it('creates blacklist object', function () {
-            mapRefs.blacklist.should.deep.equal({
-                'one': true,
-                'two': true
-            });
-        });
-
-        it('creates whitelist object', function () {
-            mapRefs.whitelist.should.deep.equal({
-                'bim': true,
-                'bom': true
-            });
-        });
-
-    });
-
     describe('map', function () {
 
         describe('scans a non blacklisted file', function () {
