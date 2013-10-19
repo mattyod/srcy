@@ -1,13 +1,13 @@
 'use strict';
 
-var mapImages = require('../../lib/mapImages'),
+var mapResources = require('../../lib/mapResources'),
     log = require('../../lib/log'),
     fs = require('fs');
 
-describe('mapImages', sandbox(function () {
+describe('mapResources', sandbox(function () {
     var files,
         config = {
-            images: {
+            resources: {
                 root: 'foo',
                 ignore: [],
                 types: ['gif', 'png'],
@@ -19,7 +19,7 @@ describe('mapImages', sandbox(function () {
 
         beforeEach(function () {
 
-            config.images.folders = ['img'];
+            config.resources.folders = ['img'];
 
             this.stub(fs, 'existsSync', function () {
                 return false;
@@ -27,7 +27,7 @@ describe('mapImages', sandbox(function () {
 
             this.stub(log, 'error');
 
-            files = mapImages(config);
+            files = mapResources(config);
 
         });
 
@@ -42,7 +42,7 @@ describe('mapImages', sandbox(function () {
 
         beforeEach(function () {
 
-            config.images.folders = ['file.gif'];
+            config.resources.folders = ['file.gif'];
 
             this.stub(fs, 'existsSync', function () {
                 return true;
@@ -54,7 +54,7 @@ describe('mapImages', sandbox(function () {
                 }};
             });
 
-            files = mapImages(config);
+            files = mapResources(config);
 
         });
 
@@ -69,7 +69,7 @@ describe('mapImages', sandbox(function () {
         beforeEach(function () {
             var firstCall = false;
 
-            config.images.folders = ['img'];
+            config.resources.folders = ['img'];
 
             this.stub(fs, 'existsSync', function () {
                 return true;
@@ -96,7 +96,7 @@ describe('mapImages', sandbox(function () {
                 'img/thing.png': true
             };
 
-            files = mapImages(config);
+            files = mapResources(config);
 
             files.should.deep.equal(expected);
         });
@@ -104,9 +104,9 @@ describe('mapImages', sandbox(function () {
         describe('when a file is specified to be ignored', function () {
 
             beforeEach(function () {
-                config.images.ignore = ['img/thing.png'];
+                config.resources.ignore = ['img/thing.png'];
 
-                files = mapImages(config);
+                files = mapResources(config);
             });
 
             it('does not return the ignored file', function () {

@@ -1,42 +1,42 @@
 'use strict';
 
-var imgRegExp = require('../../lib/imgRegExp');
+var resRegExp = require('../../lib/resRegExp');
 
-describe('imgRegExp', sandbox(function () {
+describe('resRegExp', sandbox(function () {
     var reg,
         conf = {
-            images: {
+            resources: {
                 types: ['gif', 'png'],
                 folders: ['img', 'images']
             }
         };
 
     beforeEach(function () {
-        reg = imgRegExp(conf);
+        reg = resRegExp(conf);
     });
 
     it('matches a gif in the img folder', function () {
         'img/path/thing.gif'.match(reg).should.be.ok;
         '/img/path/thing.gif'.match(reg).should.be.ok;
-        'img/{variable}/thing.gif'.match(reg).should.be.ok;
+        'img/#{variable}/thing.gif'.match(reg).should.be.ok;
     });
 
     it('matches a png in the img folder', function () {
         'img/path/thing.png'.match(reg).should.be.ok;
         '/img/path/thing.png'.match(reg).should.be.ok;
-        'img/{variable}/thing.png'.match(reg).should.be.ok;
+        'img/#{variable}/thing.png'.match(reg).should.be.ok;
     });
 
     it('matches a gif in the images folder', function () {
         'images/path/thing.gif'.match(reg).should.be.ok;
         '/images/path/thing.gif'.match(reg).should.be.ok;
-        'images/{variable}/thing.gif'.match(reg).should.be.ok;
+        'images/#{variable}/thing.gif'.match(reg).should.be.ok;
     });
 
     it('matches a png in the images folder', function () {
         'images/path/thing.png'.match(reg).should.be.ok;
         '/images/path/thing.png'.match(reg).should.be.ok;
-        'images/{variable}/thing.png'.match(reg).should.be.ok;
+        'images/#{variable}/thing.png'.match(reg).should.be.ok;
     });
 
     it('does not match these things', function () {

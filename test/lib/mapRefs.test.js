@@ -117,11 +117,11 @@ describe('mapRefs', function () {
             });
 
             it('scans thing.js', function () {
-                mapRefs.scan.should.have.been.calledWith('web/thing.js')
+                mapRefs.scan.should.have.been.calledWith('web/thing.js');
             });
 
             it('scans thing.css', function () {
-                mapRefs.scan.should.have.been.calledWith('web/thing.css')
+                mapRefs.scan.should.have.been.calledWith('web/thing.css');
             });
 
             it('does not scan .private', function () {
@@ -164,7 +164,7 @@ describe('mapRefs', function () {
 
         beforeEach(function () {
             mapRefs.config = {
-                images: {
+                resources: {
                     root: '/public'
                 },
                 refs: {

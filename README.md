@@ -76,11 +76,12 @@ The generated file should look like this:
     "refs": {
         "whitelist": false,
         "blacklist": [],
+        "notTypes": [],
         "replace": {},
         "ignore": [],
         "wildcards": []
     },
-    "images": {
+    "resources": {
         "root": "",
         "folders": [],
         "types": ["gif", "png", "jpg", "svg"],
@@ -149,21 +150,21 @@ notTypes: ["css"]
 *default value*: {}
 
 In some cases you may wish to replace a file reference with one or many
-others. **N.B** replace takes presedence over [wildcards](#refswildcards).
+others. **N.B** replace takes precedence over [wildcards](#refswildcards).
 
-You may have Javascript files that reference images dynamically such as this:
+You may have JavaScript files that reference resources dynamically such as this:
 
 ```
 "img/buttons/" + onOffState + ".gif"
 ```
 
-You may wish to specify that this reference should refer to two seperate image
-files:
+You may wish to specify that this reference should refer to two separate
+resource files:
 
 * "img/buttons/on.gif"
 * "img/buttons/off.gif"
 
-In order to acheive this you would set the replace attribute to be:
+In order to achieve this you would set the replace attribute to be:
 
 ```
 "replace": {
@@ -180,8 +181,8 @@ Both files will now be matched against your project set up.
 
 *default value*: []
 
-You may wish to ignore certain image references within your code base, perhaps
-they refer to external resources with similar matching patterns or are
+You may wish to ignore certain resource references within your code base,
+perhaps they refer to external resources with similar matching patterns or are
 described as plain text and not actually part of your project. Any references
 you wish to exclude from Srcy's checks should be listed as such:
 
@@ -228,12 +229,12 @@ the files:
 
 would be added as references.
 
-#### images
+#### resources
 
 This section is for configuring the way in which Srcy matches static files in
 your project.
 
-##### images.root
+##### resources.root
 
 *default value*: ""
 
@@ -244,7 +245,7 @@ specified. Something such as:
 "./public"
 ```
 
-##### images.folders
+##### resources.folders
 
 *default value*: []
 
@@ -255,18 +256,18 @@ look for files that you wish to be checked. Such as:
 "folders": ["img", "pdfs"]
 ```
 
-##### images.types
+##### resources.types
 
 *default value*: ["gif", "png", "jpg", "svg"]
 
 Srcy will only check for files with the suffixes within this array, add any
 additional file types that you want to check.
 
-##### images.ignore
+##### resources.ignore
 
 *default value*: []
 
-If you wish to exclude any files from the 'image' search you can specify them
+If you wish to exclude any files from the resource search you can specify them
 here.
 
 ```

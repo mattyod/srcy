@@ -1,6 +1,11 @@
 # Srcy Change log
 
-## 19 October 2013, 0.0.6
+## 19 October 2013, 0.1.0
+
+* Refer to more generic resources rather than images. It's not all about images.
+* Spelling mistakes in readme.
+
+## 18 October 2013, 0.0.6
 
 * notTypes attribute added to refs so that you can ignore a type of file.
 
