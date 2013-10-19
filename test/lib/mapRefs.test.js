@@ -7,6 +7,15 @@ describe('mapRefs', function () {
 
     describe('map', function () {
 
+        beforeEach(function () {
+            mapRefs.config = {
+                refs: {
+                    blacklist: {
+                    }
+                }
+            };
+        });
+
         describe('scans a non blacklisted file', function () {
 
             beforeEach(function () {
@@ -30,7 +39,7 @@ describe('mapRefs', function () {
         describe('does not scan a blacklisted file', function () {
 
             beforeEach(function () {
-                mapRefs.blacklist = {
+                mapRefs.config.refs.blacklist = {
                     'pictures.txt': true
                 };
 
@@ -56,7 +65,7 @@ describe('mapRefs', function () {
             beforeEach(function () {
                 var firstCall = false;
 
-                mapRefs.blacklist = {
+                mapRefs.config.refs.blacklist = {
                     'web/pictures.txt': true
                 };
 
@@ -113,6 +122,10 @@ describe('mapRefs', function () {
             this.stub(mapRefs, 'wildcard', function () {
                 return false;
             });
+
+            mapRefs.config.refs = {
+                ignore: {}
+            };
 
             mapRefs.addMatches(['file.txt'], { 'foo': 'bar' });
 
