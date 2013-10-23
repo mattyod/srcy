@@ -1,7 +1,7 @@
 {
     "name": "srcy",
     "description": "Check project image paths for missing or redundant images",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "keywords": ["images", "paths", "assets", "test", "build"],
     "author": {
         "name": "Matthew O'Donoghue"
@@ -15,6 +15,9 @@
     },
     "main": "./srcy.js",
     "bin": "./bin/srcy",
+    "dependencies": {
+        "glob": "3.2.x"
+    },
     "devDependencies": {
         "mocha": "1.13.x",
         "sinon": "1.7.x",

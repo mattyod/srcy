@@ -6,40 +6,47 @@ var getConf = require('../../lib/getConf'),
 
 describe('getConf', sandbox(function () {
 
-    beforeEach(function () {
-        this.stub(log);
-    });
 
-    describe('when no conf fie is present', function () {
+    describe('fetch', function () {
 
         beforeEach(function () {
+            this.stub(log);
             getConf.fetch();
         });
 
-        it('logs out an error and some info', function () {
-            log.error.should.have.been.calledOnce;
-            log.info.should.have.been.calledOnce;
-        });
+        describe('when no conf fie is present', function () {
 
-    });
-
-    describe('when a conf file is present', function () {
-
-        beforeEach(function () {
-
-            this.stub(fs, 'existsSync', function () {
-                return true;
-            });
-
-            this.stub(fs, 'readFileSync', function () {
-                return '{ "foo": "bar" }';
+            it('logs out an error and some info', function () {
+                log.error.should.have.been.calledOnce;
+                log.info.should.have.been.calledOnce;
             });
 
         });
 
-        it('returns the parsed conf file', function () {
-            getConf.fetch().should.deep.equal(JSON.parse('{ "foo": "bar" }'));
+        describe('when a conf file is present', function () {
+
+            beforeEach(function () {
+
+                this.stub(fs, 'existsSync', function () {
+                    return true;
+                });
+
+                this.stub(fs, 'readFileSync', function () {
+                    return '{ "foo": "bar" }';
+                });
+
+                this.stub(getConf, 'parse', function (config) {
+                    return config;
+                });
+
+            });
+
+            it('returns the parsed conf file', function () {
+                getConf.fetch().should.deep.equal(JSON.parse('{ "foo": "bar" }'));
+            });
+
         });
+
     });
 
 }));

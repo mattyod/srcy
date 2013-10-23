@@ -5,44 +5,16 @@ var mapRefs = require('../../lib/mapRefs'),
 
 describe('mapRefs', function () {
 
-    describe('checkConf', function () {
+    describe('map', function () {
 
         beforeEach(function () {
             mapRefs.config = {
                 refs: {
-                    ignore: ['foo', 'bar'],
-                    blacklist: ['one', 'two'],
-                    whitelist: ['bim', 'bom']
+                    blacklist: {
+                    }
                 }
             };
-
-            mapRefs.checkConf();
         });
-
-        it('creates ignore object', function () {
-            mapRefs.ignore.should.deep.equal({
-                'foo': true,
-                'bar': true
-            });
-        });
-
-        it('creates blacklist object', function () {
-            mapRefs.blacklist.should.deep.equal({
-                'one': true,
-                'two': true
-            });
-        });
-
-        it('creates whitelist object', function () {
-            mapRefs.whitelist.should.deep.equal({
-                'bim': true,
-                'bom': true
-            });
-        });
-
-    });
-
-    describe('map', function () {
 
         describe('scans a non blacklisted file', function () {
 
@@ -67,7 +39,7 @@ describe('mapRefs', function () {
         describe('does not scan a blacklisted file', function () {
 
             beforeEach(function () {
-                mapRefs.blacklist = {
+                mapRefs.config.refs.blacklist = {
                     'pictures.txt': true
                 };
 
@@ -93,7 +65,7 @@ describe('mapRefs', function () {
             beforeEach(function () {
                 var firstCall = false;
 
-                mapRefs.blacklist = {
+                mapRefs.config.refs.blacklist = {
                     'web/pictures.txt': true
                 };
 
@@ -150,6 +122,10 @@ describe('mapRefs', function () {
             this.stub(mapRefs, 'wildcard', function () {
                 return false;
             });
+
+            mapRefs.config.refs = {
+                ignore: {}
+            };
 
             mapRefs.addMatches(['file.txt'], { 'foo': 'bar' });
 
