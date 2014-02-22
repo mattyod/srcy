@@ -7,7 +7,7 @@ describe('feedback', sandbox(function () {
         refs = {};
 
     beforeEach(function () {
-        this.stub(log);
+        sandbox.stub(log);
     });
 
     describe('with no resources or refs', function () {

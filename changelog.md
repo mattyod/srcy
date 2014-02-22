@@ -1,5 +1,13 @@
 # Srcy Change log
 
+## 22 February 2014, 0.2.1
+* Updated test dependencies and tests.
+* Stubs, spies and mocks now use sandbox scope instead of this.
+* Removed engines from package.json
+
+## November 2013, 0.2.0
+* Globs
+
 ## 19 October 2013, 0.1.0
 
 * Refer to more generic resources rather than images. It's not all about images.

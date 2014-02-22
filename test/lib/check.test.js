@@ -27,9 +27,9 @@ describe('check', sandbox(function () {
             ]
         };
 
-        this.stub(log, 'success');
+        sandbox.stub(log, 'success');
 
-        this.stub(feedback, 'show');
+        sandbox.stub(feedback, 'show');
     });
 
     describe('when all images and refs map', function () {

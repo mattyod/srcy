@@ -8,7 +8,7 @@ global.should = require('chai').use(require('sinon-chai')).should();
 
         beforeEach(function () {
             global.sandbox = global.sinon.sandbox.create({
-                injectInto: this,
+                injectInto: null,
                 properties: ['spy', 'stub', 'mock']
             });
         });

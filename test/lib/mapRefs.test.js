@@ -19,13 +19,13 @@ describe('mapRefs', function () {
         describe('scans a non blacklisted file', function () {
 
             beforeEach(function () {
-                this.stub(fs, 'statSync', function () {
+                sandbox.stub(fs, 'statSync', function () {
                     return { isDirectory: function () {
                         return false;
                     }};
                 });
 
-                this.stub(mapRefs, 'scan');
+                sandbox.stub(mapRefs, 'scan');
 
                 mapRefs.map('pictures.txt');
             });
@@ -43,13 +43,13 @@ describe('mapRefs', function () {
                     'pictures.txt': true
                 };
 
-                this.stub(fs, 'statSync', function () {
+                sandbox.stub(fs, 'statSync', function () {
                     return { isDirectory: function () {
                         return false;
                     }};
                 });
 
-                this.stub(mapRefs, 'scan');
+                sandbox.stub(mapRefs, 'scan');
 
                 mapRefs.map('pictures.txt');
             });
@@ -69,7 +69,7 @@ describe('mapRefs', function () {
                     'web/pictures.txt': true
                 };
 
-                this.stub(fs, 'statSync', function () {
+                sandbox.stub(fs, 'statSync', function () {
                     return { isDirectory: function () {
                         if (!firstCall) {
                             firstCall = true;
@@ -78,11 +78,11 @@ describe('mapRefs', function () {
                     }};
                 });
 
-                this.stub(fs, 'readdirSync', function () {
+                sandbox.stub(fs, 'readdirSync', function () {
                     return ['.private', 'thing.js', 'thing.css', 'pictures.txt'];
                 });
 
-                this.stub(mapRefs, 'scan');
+                sandbox.stub(mapRefs, 'scan');
 
                 mapRefs.map('web');
 
@@ -115,11 +115,11 @@ describe('mapRefs', function () {
     describe('addMatches', function () {
 
         beforeEach(function () {
-            this.stub(mapRefs, 'replace', function () {
+            sandbox.stub(mapRefs, 'replace', function () {
                 return false;
             });
 
-            this.stub(mapRefs, 'wildcard', function () {
+            sandbox.stub(mapRefs, 'wildcard', function () {
                 return false;
             });
 
@@ -148,13 +148,13 @@ describe('mapRefs', function () {
                 }
             };
 
-            this.stub(fs, 'statSync', function () {
+            sandbox.stub(fs, 'statSync', function () {
                 return { isDirectory: function () {
                     return true;
                 }};
             });
 
-            this.stub(fs, 'readdirSync', function () {
+            sandbox.stub(fs, 'readdirSync', function () {
                 return [
                     'sunny_small.gif', // should match
                     'sunny_big.gif', // should not match
@@ -163,7 +163,7 @@ describe('mapRefs', function () {
                 ];
             });
 
-            this.stub(mapRefs, 'addMatches');
+            sandbox.stub(mapRefs, 'addMatches');
 
             mapRefs.wildcard('img/weather/#{JadeVar}_small.gif', { 'foo': 'bar' });
         });
@@ -191,7 +191,7 @@ describe('mapRefs', function () {
                 }
             };
 
-            res = this.stub(mapRefs, 'addMatches');
+            res = sandbox.stub(mapRefs, 'addMatches');
 
             mapRefs.replace('foo.gif', { 'foo': 'bar' });
         });

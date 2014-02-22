@@ -21,11 +21,11 @@ describe('mapResources', sandbox(function () {
 
             config.resources.folders = ['img'];
 
-            this.stub(fs, 'existsSync', function () {
+            sandbox.stub(fs, 'existsSync', function () {
                 return false;
             });
 
-            this.stub(log, 'error');
+            sandbox.stub(log, 'error');
 
             files = mapResources(config);
 
@@ -44,11 +44,11 @@ describe('mapResources', sandbox(function () {
 
             config.resources.folders = ['file.gif'];
 
-            this.stub(fs, 'existsSync', function () {
+            sandbox.stub(fs, 'existsSync', function () {
                 return true;
             });
 
-            this.stub(fs, 'statSync', function () {
+            sandbox.stub(fs, 'statSync', function () {
                 return { isDirectory: function () {
                     return false;
                 }};
@@ -71,11 +71,11 @@ describe('mapResources', sandbox(function () {
 
             config.resources.folders = ['img'];
 
-            this.stub(fs, 'existsSync', function () {
+            sandbox.stub(fs, 'existsSync', function () {
                 return true;
             });
 
-            this.stub(fs, 'statSync', function () {
+            sandbox.stub(fs, 'statSync', function () {
                 return { isDirectory: function () {
                     if (!firstCall) {
                         firstCall = true;
@@ -84,7 +84,7 @@ describe('mapResources', sandbox(function () {
                 }};
             });
 
-            this.stub(fs, 'readdirSync', function () {
+            sandbox.stub(fs, 'readdirSync', function () {
                 return ['.private', 'thing.gif', 'thing.png'];
             });
 

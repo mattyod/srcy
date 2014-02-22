@@ -10,7 +10,7 @@ describe('itterate', sandbox(function () {
         };
 
     beforeEach(function () {
-        callback = this.spy();
+        callback = sandbox.spy();
         itterate(obj, callback);
     });
 

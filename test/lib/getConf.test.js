@@ -10,7 +10,7 @@ describe('getConf', sandbox(function () {
     describe('fetch', function () {
 
         beforeEach(function () {
-            this.stub(log);
+            sandbox.stub(log);
             getConf.fetch();
         });
 
@@ -27,15 +27,15 @@ describe('getConf', sandbox(function () {
 
             beforeEach(function () {
 
-                this.stub(fs, 'existsSync', function () {
+                sandbox.stub(fs, 'existsSync', function () {
                     return true;
                 });
 
-                this.stub(fs, 'readFileSync', function () {
+                sandbox.stub(fs, 'readFileSync', function () {
                     return '{ "foo": "bar" }';
                 });
 
-                this.stub(getConf, 'parse', function (config) {
+                sandbox.stub(getConf, 'parse', function (config) {
                     return config;
                 });
 
