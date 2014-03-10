@@ -11,7 +11,8 @@ describe('mapRefs', function () {
             mapRefs.config = {
                 refs: {
                     blacklist: {
-                    }
+                    },
+                    notTypes: {}
                 }
             };
         });
