@@ -1,4 +1,6 @@
-# Srcy [![Build Status](https://secure.travis-ci.org/mattyod/srcy.png?branch=master)](http://travis-ci.org/mattyod/srcy)
+# Srcy [![Build Status](https://secure.travis-ci.org/mattyod/srcy.png?branch=master)](http://travis-ci.org/mattyod/srcy) [![Dependencies](https://david-dm.org/mattyod/srcy.png)](https://david-dm.org/mattyod/srcy)
+
+[![NPM](https://nodei.co/npm/srcy.png?downloads=true&stars=true)](https://nodei.co/npm/srcy.png?downloads=true&stars=true)
 
 Check project paths for files that are referenced but do not exist and
 files that exist but are not referenced.

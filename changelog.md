@@ -1,6 +1,10 @@
 # Srcy Change log
 
-#10 March 2014, 0.2.2
+# 29 April 2014, 0.2.3
+
+* Added NPM and dependencies badges.
+
+# 10 March 2014, 0.2.2
 
 * Retored notTypes functionality.
 
