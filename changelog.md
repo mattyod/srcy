@@ -1,5 +1,9 @@
 # Srcy Change log
 
+# 29 April 2014, 0.2.4
+
+* Fixed NPM link
+
 # 29 April 2014, 0.2.3
 
 * Added NPM and dependencies badges.
