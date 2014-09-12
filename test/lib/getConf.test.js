@@ -1,7 +1,7 @@
 'use strict';
 
 var getConf = require('../../lib/getConf'),
-    log = require('../../lib/log'),
+    log = require('col'),
     fs = require('fs');
 
 describe('getConf', sandbox(function () {

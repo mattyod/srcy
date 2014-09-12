@@ -2,7 +2,7 @@
 
 var path = require('path'),
     fs = require('fs'),
-    log = require('../lib/log');
+    log = require('col');
 
 // Handle any passed arguments
 var args = require('./args');

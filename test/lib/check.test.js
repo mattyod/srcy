@@ -2,7 +2,7 @@
 
 var check = require('../../lib/check.js'),
     feedback = require('../../lib/feedback'),
-    log = require('../../lib/log');
+    log = require('col');
 
 describe('check', sandbox(function () {
     var imgs,
