@@ -1,5 +1,5 @@
 'use strict';
-var log = require('../../lib/log');
+var log = require('col');
 
 module.exports = (function () {
 

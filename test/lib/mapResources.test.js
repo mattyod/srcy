@@ -1,7 +1,7 @@
 'use strict';
 
 var mapResources = require('../../lib/mapResources'),
-    log = require('../../lib/log'),
+    log = require('col'),
     fs = require('fs');
 
 describe('mapResources', sandbox(function () {

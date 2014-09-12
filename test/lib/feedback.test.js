@@ -1,6 +1,6 @@
 'use strict';
 var feedback = require('../../lib/feedback'),
-    log = require('../../lib/log');
+    log = require('col');
 
 describe('feedback', sandbox(function () {
     var resources = {},
@@ -33,8 +33,8 @@ describe('feedback', sandbox(function () {
 
         it('logs two warnings', function () {
             log.warn.callCount.should.equal(2);
-            log.warn.args[0][0].should.equal('resource never referenced - res1');
-            log.warn.args[1][0].should.equal('resource never referenced - res2');
+            log.warn.args[0].should.deep.equal([ 'resource never referenced -', 'res1' ]);
+            log.warn.args[1].should.deep.equal([ 'resource never referenced -', 'res2' ]);
         });
 
     });
@@ -52,9 +52,9 @@ describe('feedback', sandbox(function () {
         it('logs two errors and three infos', function () {
             log.error.callCount.should.equal(2);
             log.info.callCount.should.equal(3);
-            log.info.args[0][0].should.equal('res1: foo1 (line: 1)');
-            log.info.args[1][0].should.equal('res2: foo2 (line: 2)');
-            log.info.args[2][0].should.equal('res2: foo3 (line: 3)');
+            log.info.args[0].should.deep.equal([ 'res1:', 'foo1', '(line: 1)' ]);
+            log.info.args[1].should.deep.equal([ 'res2:', 'foo2', '(line: 2)' ]);
+            log.info.args[2].should.deep.equal([ 'res2:', 'foo3', '(line: 3)' ]);
         });
 
     });

@@ -1,7 +1,7 @@
 'use strict';
 var fs = require('fs'),
     path = require('path'),
-    log = require('../../lib/log');
+    log = require('col');
 
 var getConf = function () {
     var target = process.mainModule.filename.split('/');
