@@ -186,6 +186,7 @@ describe('mapRefs', function () {
         beforeEach(function () {
             mapRefs.config = {
                 refs: {
+                    ignore: {},
                     replace: {
                         'foo.gif': ['bar.gif', 'foobar.png']
                     }
@@ -205,6 +206,10 @@ describe('mapRefs', function () {
             mapRefs.addMatches.should.have.been.calledOnce;
             mapRefs.addMatches.args[0][0].should.deep.equal(['bar.gif', 'foobar.png']);
             mapRefs.addMatches.args[0][1].should.deep.equal({ 'foo': 'bar' });
+        });
+
+        it('sets the path to replace as an ignore', function () {
+            mapRefs.config.refs.ignore['foo.gif'].should.be.ok;
         });
 
         it('deletes the config reference', function () {
