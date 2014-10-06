@@ -1,5 +1,14 @@
 # Srcy Change log
 
+# 6 October 2014, 0.4.0
+
+* Fixed issue in replace methods where images paths would still get matched.
+* Description is no longer image specific.
+
+# 12 September 2014, 0.3.0
+
+* Uses col for logging.
+
 # 29 April 2014, 0.2.4
 
 * Fixed NPM link
