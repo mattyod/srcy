@@ -3,6 +3,7 @@
 # 3 March 2015, 0.4.1
 
 * Updated dependencies
+* Added 0.12 for Travis tests
 * Changed package test runner (spec)
 
 # 6 October 2014, 0.4.0
