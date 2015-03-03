@@ -1,5 +1,10 @@
 # Srcy Change log
 
+# 3 March 2015, 0.4.1
+
+* Updated dependencies
+* Changed package test runner (spec)
+
 # 6 October 2014, 0.4.0
 
 * Fixed issue in replace methods where images paths would still get matched.
