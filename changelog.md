@@ -1,5 +1,9 @@
 # Srcy Change log
 
+# 10 March 2015, 0.4.3
+
+* npm not undeprecating mistakenly deprecated 0.4.2
+
 # 10 March 2015, 0.4.2
 
 * Updated Glob, previous version has dissapeared.

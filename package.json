@@ -1,7 +1,7 @@
 {
     "name": "srcy",
     "description": "Check project paths for missing or redundant assets",
-    "version": "0.4.2",
+    "version": "0.4.3",
     "keywords": ["images", "paths", "assets", "test", "build"],
     "author": {
         "name": "Matthew O'Donoghue"
